@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Entendendo o Desenvolvimento Web</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <h1 class="site-title">Entendendo o Desenvolvimento Web</h1>
+        <button id="nav-toggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menu">☰</button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Navegação principal">
+          <ul>
+            <li><a href="#html">HTML</a></li>
+            <li><a href="#css">CSS</a></li>
+            <li><a href="#js">JavaScript</a></li>
+            <li><a href="#boas-praticas">Boas Práticas</a></li>
+            <li><a href="#tecnologias">Tecnologias</a></li>
+            <li><a href="#fluxograma">Fluxograma</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Alternar tema">Tema</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="intro" class="hero">
+        <div class="container">
+          <p class="lead">Este site é um guia didático sobre fundamentos de desenvolvimento web: HTML, CSS e JavaScript — com boas práticas, tecnologias relacionadas e um fluxo de projeto do início ao deploy.</p>
+        </div>
+      </section>
+
+      <section id="html" class="container content-section">
+        <h2>O que é HTML</h2>
+        <p>HTML (HyperText Markup Language) fornece a estrutura do conteúdo: títulos, parágrafos, listas, links e imagens. Use tags semânticas para melhorar acessibilidade e SEO.</p>
+
+        <article class="example">
+          <h3>Exemplo básico</h3>
+          <pre><code>&lt;!doctype html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;&lt;h1&gt;Título&lt;/h1&gt;&lt;/header&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </article>
+      </section>
+
+      <section id="css" class="container content-section">
+        <h2>O que é CSS</h2>
+        <p>CSS (Cascading Style Sheets) controla o visual: cores, fontes, espaçamentos e layout. Prefira arquivos externos para separar apresentação e conteúdo.</p>
+
+        <article class="example">
+          <h3>Tipos de inclusão</h3>
+          <ul>
+            <li>Inline: dentro do atributo <code>style</code> (evite)</li>
+            <li>Internal: dentro de um <code>&lt;style&gt;</code></li>
+            <li>External: arquivo <code>style.css</code> (recomendado)</li>
+          </ul>
+
+          <h3>Exemplo prático</h3>
+          <pre><code>body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+.container { max-width: 900px; margin: 0 auto; padding: 1rem; }</code></pre>
+        </article>
+      </section>
+
+      <section id="js" class="container content-section">
+        <h2>O que é JavaScript</h2>
+        <p>JavaScript adiciona interatividade e comportamentos à página. Use ES6+ (let/const, arrow functions, template literals) para código mais legível.</p>
+
+        <article class="example">
+          <h3>Exemplo: mostrar/ocultar</h3>
+          <p><button id="ex-toggle" class="btn">Mostrar/Ocultar exemplo</button></p>
+          <div id="ex-content" hidden>
+            <p>Este conteúdo foi alternado via JavaScript usando <code>addEventListener</code>.</p>
+          </div>
+        </article>
+      </section>
+
+      <section id="boas-praticas" class="container content-section">
+        <h2>Boas Práticas Profissionais</h2>
+        <ul>
+          <li><strong>Acessibilidade (a11y):</strong> sempre usar <code>alt</code> em imagens, rótulos, contraste adequado e navegação por teclado.</li>
+          <li><strong>Semântica:</strong> usar tags como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code> e <code>&lt;footer&gt;</code>.</li>
+          <li><strong>Responsividade:</strong> design mobile-first, Flexbox e media queries.</li>
+          <li><strong>Organização:</strong> separar HTML/CSS/JS e usar nomes de classes claros.</li>
+          <li><strong>Versionamento:</strong> explicar Git e GitHub (conceito, commits, branches).</li>
+        </ul>
+
+        <div class="welcome-save">
+          <label for="visitor-name">Digite seu nome (opcional):</label>
+          <input id="visitor-name" type="text" placeholder="Seu nome" />
+          <button id="save-name" class="btn">Salvar</button>
+          <p id="greeting" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section id="tecnologias" class="container content-section">
+        <h2>Panorama das Tecnologias Web</h2>
+        <h3>Front-End</h3>
+        <p>HTML, CSS e JavaScript. Frameworks conhecidos: React, Vue, Angular (citados apenas).</p>
+
+        <h3>Back-End</h3>
+        <p>Responsável pelo servidor e lógica. Exemplos: Node.js, Python (Django), PHP.</p>
+
+        <h3>Banco de Dados</h3>
+        <p>SQL vs NoSQL — escolha conforme necessidade do projeto.</p>
+
+        <h3>DevOps e Testes</h3>
+        <p>CI/CD, Docker, GitHub Actions e tipos de testes (unitário, integração, funcional).</p>
+      </section>
+
+      <section id="fluxograma" class="container content-section">
+        <h2>Fluxograma de um Projeto Web</h2>
+        <p>Etapas: ideia → planejamento → desenvolvimento → integração → testes → deploy → manutenção.</p>
+        <div class="fluxograma-wrap">
+          <img src="assets/fluxograma.svg" alt="Fluxograma de etapas de um projeto web" />
+        </div>
+      </section>
+
+      <section id="faq" class="container content-section">
+        <h2>Perguntas Frequentes (FAQ)</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Como começar no front-end?</button>
+            <div class="faq-answer" hidden>
+              <p>Comece por HTML e CSS, pratique criando páginas estáticas, depois aprenda JavaScript e conceitos de DOM.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Preciso aprender frameworks?</button>
+            <div class="faq-answer" hidden>
+              <p>Entenda primeiro os fundamentos. Frameworks ajudam na produtividade, mas exigem conceitos prévios.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Material educativo sobre desenvolvimento web — sem back-end. Código comentado para fins didáticos.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
